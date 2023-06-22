@@ -14,6 +14,16 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { IconExternalLink } from '@/components/ui/icons'
 
+import { User as NextAuthUser } from 'next-auth'
+
+interface User extends NextAuthUser {
+  image?: string
+}
+
+export interface Session {
+  user: User
+}
+
 export interface UserMenuProps {
   user: Session['user']
 }
