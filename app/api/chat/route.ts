@@ -22,6 +22,10 @@ export async function POST(req: Request) {
     if (session == null) {
       return new Response('Unauthorized', { status: 401 })
     }
+  } else {
+    if (!session) {
+      return new Response('Unauthorized', { status: 401 })
+    }
   }
 
   if (previewToken) {
