@@ -19,6 +19,7 @@ import { User as NextAuthUser } from 'next-auth'
 interface User extends NextAuthUser {
   image?: string
   name?: string
+  email?: string
 }
 
 interface LocalSession {
