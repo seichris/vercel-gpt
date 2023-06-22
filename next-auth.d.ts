@@ -27,10 +27,11 @@ const options = {
       const whitelistedUsernames = ['seichris'];
       const { username } = profile;
       if (!whitelistedUsernames.includes(username)) {
-        return false; // Prevent sign-in for non-whitelisted users
+        return Promise.reject(false); // Prevent sign-in for non-whitelisted users
       }
+      
+      return Promise.resolve(true); // Allow sign-in for whitelisted users
 
-      return true; // Allow sign-in for whitelisted users
     },
     // Add other callback functions if needed
   },
