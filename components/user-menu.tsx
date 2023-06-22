@@ -20,12 +20,12 @@ interface User extends NextAuthUser {
   image?: string
 }
 
-export interface Session {
+interface LocalSession {
   user: User
 }
 
 export interface UserMenuProps {
-  user: Session['user']
+  user: LocalSession['user']
 }
 
 function getUserInitials(name: string) {
